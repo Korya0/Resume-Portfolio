@@ -11,5 +11,6 @@
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Korya0)
 [![Download CV](https://img.shields.io/badge/📥_Download_CV-00C853?style=for-the-badge&logoColor=white)](./mahmoud_mohamed_cv.pdf)
 [![Sana Web](https://img.shields.io/badge/Sana_Web-D4AF37?style=for-the-badge&logoColor=white)](https://sana0.vercel.app/#/home)
+[![Overleaf](https://img.shields.io/badge/Overleaf-47A141?style=for-the-badge&logo=overleaf&logoColor=white)](https://www.overleaf.com/project)
 
 </div>
