@@ -86,24 +86,6 @@
 
 ---
 
-## 📸 CV Preview
-
-<div align="center">
-
-<p align="center">
-  <a href="cv/Mahmoud_Mohamed_Flutter%20Developer%20_resume.pdf.pdf">
-    <img src="https://via.placeholder.com/600x400?text=Click+to+View+Full+CV+PDF" alt="CV Preview"/>
-  </a>
-</p>
-
-[**Click here to view the full PDF**](cv/Mahmoud_Mohamed_Flutter%20Developer%20_resume.pdf.pdf)
-
-</div>
-
-<br/>
-
----
-
 ## 💻 Building from Source
 
 <hr style="height:1px;border:none;color:#333;background-color:#333;" />
