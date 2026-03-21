@@ -1,0 +1,110 @@
+%-------------------------
+% ATS-Optimized Resume - Mahmoud Mohamed
+% Upload this file to Overleaf (overleaf.com)
+% Compiler: pdfLaTeX (default)
+%-------------------------
+\documentclass[a4paper,11pt]{article}
+
+% --- Packages ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{xcolor}
+
+% --- Page Setup ---
+\geometry{left=0.65in, right=0.65in, top=0.45in, bottom=0.45in}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+
+% --- Colors ---
+\definecolor{accent}{HTML}{2B2B2B}
+\definecolor{linkblue}{HTML}{1A5276}
+
+% --- Section Formatting ---
+\titleformat{\section}
+  {\vspace{2pt}\large\bfseries\scshape}
+  {}{0em}{}
+  [\vspace{-5pt}\textcolor{accent}{\rule{\textwidth}{1pt}}\vspace{-2pt}]
+\titlespacing*{\section}{0pt}{6pt}{4pt}
+
+% --- Hyperlinks ---
+\hypersetup{
+    colorlinks=true,
+    linkcolor=linkblue,
+    urlcolor=linkblue,
+    pdfauthor={Mahmoud Mohamed},
+    pdftitle={Mahmoud Mohamed - Flutter Developer Resume}
+}
+
+% --- Custom Commands ---
+\newcommand{\entry}[2]{%
+  \textbf{#1} \hfill \textbf{#2}%
+}
+
+% =============================================
+\begin{document}
+
+% ---------- HEADER ----------
+\noindent
+{\LARGE\bfseries Mahmoud Mohamed}\par\vspace{1pt}
+{\large Flutter Developer}\par\vspace{4pt}
+{\small Tanta, Egypt \enspace$|$\enspace +20\,106\,517\,1195 \enspace$|$\enspace \href{mailto:mahmoudmohamed01559@gmail.com}{mahmoudmohamed01559@gmail.com} \enspace$|$\enspace \href{https://github.com/Korya0}{GitHub} \enspace$|$\enspace \href{https://www.linkedin.com/in/mahmoud-mohamed-5938ab28a/}{LinkedIn} \enspace$|$\enspace \href{https://aboard-drop-6d7.notion.site/Flutter-Developer-2427990c6fad808d8c72f2ebaabb3604?pvs=74}{Portfolio}}
+
+% ---------- SUMMARY ----------
+\section{Summary}
+\noindent Flutter Developer with a product-oriented mindset --- focused on shipping clean, maintainable apps that solve real business problems. Comfortable owning a product end-to-end, from idea to store launch, independently.
+
+% ---------- PROJECTS ----------
+\section{Projects}
+
+\noindent\entry{Sana --- Islamic Companion App \small\href{https://play.google.com/store/apps/details?id=com.sana.muslim.app}{Play Store} $\cdot$ \href{https://vercel.com/korya0s-projects}{Web}}{Jan 2026 --- Present}\\[1pt]
+\begin{itemize}[leftmargin=0.2in, nosep, topsep=1pt, itemsep=1pt]
+    \item Shipped to App Store, Google Play, and Web --- solo, from idea to deployment
+    \item Built 10+ features: Quran, prayer times, Adhkar, Qibla, 99 Names, and daily Hadith content
+    \item Stack: Flutter, Firebase, Bloc/Cubit, Hive, FCM, Shorebird, Figma
+\end{itemize}
+
+% ---------- WORK EXPERIENCE ----------
+\section{Work Experience}
+
+\noindent\entry{Flutter Developer --- Freelance}{Aug 2025 --- Present}\\[1pt]
+\begin{itemize}[leftmargin=0.2in, nosep, topsep=1pt, itemsep=1pt]
+    \item Delivered 2 client projects solo --- scoping, design, development, and APK handoff
+\end{itemize}
+
+\vspace{3pt}
+\noindent\entry{Flutter Developer Intern}{May 2025 --- Jul 2025}\\[1pt]
+\textit{National Telecommunication Institute (NTI), Egypt}
+\begin{itemize}[leftmargin=0.2in, nosep, topsep=1pt, itemsep=1pt]
+    \item Completed an intensive Flutter mobile development training program, achieving a perfect assessment score of 100/100
+\end{itemize}
+
+% ---------- SKILLS ----------
+\section{Skills}
+
+\noindent
+\textbf{Languages:} Dart, Arabic (Native), English (Professional)\\[1.5pt]
+\textbf{Frameworks:} Flutter (Mobile, Web, iOS, Android)\\[1.5pt]
+\textbf{State Mgmt:} Bloc / Cubit\\[1.5pt]
+\textbf{Backend:} Firebase, Supabase, REST APIs, GraphQL, Google Sheets API\\[1.5pt]
+\textbf{Storage:} Hive, SharedPreferences\\[1.5pt]
+\textbf{Tools:} Git, GitHub, Figma, Postman, Trello, Shorebird, VS Code, Android Studio\\[1.5pt]
+\textbf{Publishing:} Google Play Console, App Store Connect\\[1.5pt]
+\textbf{Other:} UI/UX Design, Problem Solving, Client Communication
+
+% ---------- EDUCATION ----------
+\section{Education}
+
+\noindent\entry{Bachelor of Science in Computer Science}{Sep 2022 --- Jun 2026 (Expected)}\\[1pt]
+\textit{Higher Institute of Technology and Management, Kafr El-Sheikh (HIMIT)}
+
+\vspace{4pt}
+\noindent\textbf{Certification:} Flutter Mobile Development --- NTI $\cdot$ Score: 100/100 \href{https://drive.google.com/file/d/1DiA9E64teOhpFkgzaA5GjxVm2P1-udQ-/view?usp=sharing}{\small Certificate}
+
+\end{document}
