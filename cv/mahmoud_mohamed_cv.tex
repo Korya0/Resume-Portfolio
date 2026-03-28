@@ -1,13 +1,15 @@
 %-------------------------
-% ATS-Optimized Resume - Mahmoud Mohamed
+% ATS-Optimized Master Resume v2 - Mahmoud Mohamed
 % Upload this file to Overleaf (overleaf.com)
 % Compiler: pdfLaTeX (default)
 %-------------------------
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 % --- Packages ---
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\input{glyphtounicode}
+\pdfgentounicode=1
 \usepackage{helvet}
 \renewcommand{\familydefault}{\sfdefault}
 \usepackage{geometry}
@@ -17,7 +19,7 @@
 \usepackage{xcolor}
 
 % --- Page Setup ---
-\geometry{left=0.65in, right=0.65in, top=0.45in, bottom=0.45in}
+\geometry{left=0.5in, right=0.5in, top=0.3in, bottom=0.3in}
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0pt}
@@ -28,15 +30,14 @@
 
 % --- Section Formatting ---
 \titleformat{\section}
-  {\vspace{2pt}\large\bfseries\scshape}
+  {\vspace{1pt}\large\bfseries\scshape}
   {}{0em}{}
   [\vspace{-5pt}\textcolor{accent}{\rule{\textwidth}{1pt}}\vspace{-2pt}]
-\titlespacing*{\section}{0pt}{6pt}{4pt}
+\titlespacing*{\section}{0pt}{3pt}{2pt}
 
 % --- Hyperlinks ---
 \hypersetup{
     colorlinks=true,
-    linkcolor=linkblue,
     urlcolor=linkblue,
     pdfauthor={Mahmoud Mohamed},
     pdftitle={Mahmoud Mohamed - Flutter Developer Resume}
@@ -52,51 +53,85 @@
 
 % ---------- HEADER ----------
 \noindent
-{\LARGE\bfseries Mahmoud Mohamed}\par\vspace{1pt}
-{\large Flutter Developer}\par\vspace{4pt}
-{\small Tanta, Egypt \enspace$|$\enspace +20\,106\,517\,1195 \enspace$|$\enspace \href{mailto:mahmoudmohamed01559@gmail.com}{mahmoudmohamed01559@gmail.com} \enspace$|$\enspace \href{https://github.com/Korya0}{GitHub} \enspace$|$\enspace \href{https://www.linkedin.com/in/mahmoud-mohamed-5938ab28a/}{LinkedIn} \enspace$|$\enspace \href{https://aboard-drop-6d7.notion.site/Flutter-Developer-2427990c6fad808d8c72f2ebaabb3604?pvs=74}{Portfolio}}
+{\LARGE\bfseries Mahmoud Mohamed}\par\vspace{0pt}
+{\large Flutter Developer}\par\vspace{3pt}
+{\small
+  Tanta, Egypt
+  \enspace$|$\enspace +20\,106\,517\,1195
+  \enspace$|$\enspace \href{mailto:mahmoudmohamed01559@gmail.com}{mahmoudmohamed01559@gmail.com}
+  \enspace$|$\enspace \href{https://github.com/Korya0}{GitHub}
+  \enspace$|$\enspace \href{https://www.linkedin.com/in/mahmoud-mohamed-5938ab28a/}{LinkedIn}
+  \enspace$|$\enspace \href{https://aboard-drop-6d7.notion.site/Flutter-Developer-2427990c6fad808d8c72f2ebaabb3604}{Portfolio}
+}
 
 % ---------- SUMMARY ----------
 \section{Summary}
-\noindent Flutter Developer who thinks business-first --- building simple solutions that deliver real value.
+Junior Flutter Developer with 1+ year of experience shipping cross-platform apps with Flutter, Firebase, and Clean Architecture (BLoC/Cubit). Independently deployed a production app to Android and Web platforms (rated 5.0 stars), handling full product lifecycle from Figma design to deployment and OTA updates via Shorebird.
+
+% ---------- TECHNICAL SKILLS ----------
+\section{Technical Skills}
+
+\noindent
+\textbf{Languages:} Dart\\[1.5pt]
+\textbf{Flutter:} Mobile \& Web Development --- BLoC/Cubit, GoRouter, Freezed, json\_serializable, Hive, SharedPreferences, Responsive \& Adaptive Design\\[1.5pt]
+\textbf{Architecture:} Clean Architecture, SOLID Principles, MVVM, Dependency Injection (GetIt)\\[1.5pt]
+\textbf{Backend \& APIs:} Firebase (Firestore, Auth, Crashlytics, Analytics, Remote Config, Performance Monitoring), REST APIs (Dio, Retrofit), Google Books API, Google Sheets API\\[1.5pt]
+\textbf{Tools:} Git, GitHub, Figma (UI/UX Design), Shorebird (OTA Updates), Android Studio, VS Code
 
 % ---------- PROJECTS ----------
 \section{Projects}
 
-\noindent\entry{Sana --- Islamic Companion App \small\href{https://play.google.com/store/apps/details?id=com.sana.muslim.app}{Play Store} $\cdot$ \href{https://sana0.vercel.app/\#/home}{Web}}{Jan 2026 --- Present}\\[1pt]
+\noindent\entry{Sana --- Islamic Companion App \normalfont\small[\href{https://play.google.com/store/apps/details?id=com.sana.muslim.app}{Play Store}] [\href{https://sana0.vercel.app/\#/home}{Web}]}{Jan 2026 --- Present}\\[1pt]
 \begin{itemize}[leftmargin=0.2in, nosep, topsep=1pt, itemsep=1pt]
-    \item Shipped to App Store, Google Play, and Web --- solo, from idea to deployment
-    \item Built 10+ features: Quran, prayer times, Adhkar, Qibla, 99 Names, and daily Hadith content
-    \item Stack: Flutter, Firebase, Bloc/Cubit, Hive, FCM, Shorebird, Figma
+    \item Launched independently on both Google Play Store and Web --- rated 5.0 stars with 10+ reviews on Play Store
+    \item Architected an offline-first app with 10+ features (Quran, prayer times, Adhkar, Qibla, 99 Names) using Clean Architecture and BLoC
+    \item Engineered adaptive UI with platform-specific components for iOS, Android, and Web from a single codebase
+    \item Integrated and configured 6 Firebase services (Firestore, Auth, Remote Config, Crashlytics, Analytics, Performance Monitoring) including in-app user feedback system
+    \item Published 2 releases and 2 OTA patches via Shorebird --- zero-downtime updates without store resubmission
+\end{itemize}
+
+\vspace{3pt}
+\noindent\entry{ICO Stories --- Interactive PDF Storybook Reader \normalfont\small[Freelance]}{Oct 2025}\\[1pt]
+\begin{itemize}[leftmargin=0.2in, nosep, topsep=1pt, itemsep=1pt]
+    \item Built a Flutter app housing 60 PDF storybooks with dual rendering (flutter\_pdfview + pdfx) and page-flip animations
+    \item Analyzed audio synchronization requirements and integrated audioplayers + just\_audio with responsive layouts via flutter\_screenutil
+\end{itemize}
+
+\vspace{3pt}
+\noindent\entry{Car Plate --- Vehicle Registration Tracker \normalfont\small[Freelance]}{Aug 2025}\\[1pt]
+\begin{itemize}[leftmargin=0.2in, nosep, topsep=1pt, itemsep=1pt]
+    \item Engineered a Flutter CRUD app with search, filter, and export for vehicle plate records using Google Sheets API as a free serverless backend
+\end{itemize}
+
+\vspace{3pt}
+\noindent\entry{BookFlick --- Book Discovery App \normalfont\small[\href{https://github.com/Korya0/BookFlick}{GitHub}]}{Jul 2025}\\[1pt]
+\textit{NTI Graduation Project --- Score: 100/100}
+\begin{itemize}[leftmargin=0.2in, nosep, topsep=1pt, itemsep=1pt]
+    \item Developed a book discovery app with real-time search, favorites, and offline library powered by Google Books API
+    \item Implemented Clean Architecture with Cubit, GetIt DI, Hive offline storage, and Hero/Rive animations with Light/Dark theme
 \end{itemize}
 
 % ---------- WORK EXPERIENCE ----------
 \section{Work Experience}
 
-\noindent\entry{Flutter Developer --- Freelance}{Aug 2025 --- Present}\\[1pt]
+\noindent\entry{Flutter Developer --- Freelance (Mostaql)}{Oct 2025 --- Present}\\[1pt]
 \begin{itemize}[leftmargin=0.2in, nosep, topsep=1pt, itemsep=1pt]
-    \item ICO Stories --- PDF storybook reader with audio sync
-    \item Car Plate --- Vehicle registration app using Google Sheets API
+    \item Completed 3 client projects end-to-end: requirements gathering, Figma design, Flutter development, and client communication
+    \item Maintained 5/5 client satisfaction rating with 100\% on-time delivery across all projects
 \end{itemize}
 
 \vspace{3pt}
-\noindent\entry{Flutter Developer Intern \small\href{https://drive.google.com/file/d/1DiA9E64teOhpFkgzaA5GjxVm2P1-udQ-/view?usp=sharing}{Certificate}}{May 2025 --- Jul 2025}\\[1pt]
-\textit{National Telecommunication Institute (NTI), Egypt --- Score: 100/100}
-\vspace{4pt}
-
-% ---------- SKILLS ----------
-\section{Skills}
-
-\noindent
-\textbf{Languages:} Dart, Arabic, English\\[1.5pt]
-\textbf{Flutter:} Mobile, Web, iOS, Android --- Bloc/Cubit, Hive, SharedPreferences\\[1.5pt]
-\textbf{Backend:} Firebase, Supabase, REST APIs, GraphQL\\[1.5pt]
-\textbf{Tools:} Git, GitHub, Figma, Postman, Shorebird, VS Code, Android Studio
+\noindent\entry{Flutter Developer Intern --- NTI \normalfont\small[\href{https://drive.google.com/file/d/1DiA9E64teOhpFkgzaA5GjxVm2P1-udQ-/view?usp=sharing}{Certificate}]}{May 2025 --- Jul 2025}\\[1pt]
+\textit{National Telecommunication Institute (NTI), Egypt}\\[1pt]
+Completed intensive Flutter training --- score: 100/100. Developed 10+ apps (healthcare, e-commerce, API integrations) using Flutter, Cubit, and REST APIs.
 
 % ---------- EDUCATION ----------
 \section{Education}
 
 \noindent\entry{Bachelor of Science in Computer Science}{Sep 2022 --- Jun 2026 (Expected)}\\[1pt]
 \textit{Higher Institute of Technology and Management, Kafr El-Sheikh (HIMIT)}
+
+\vspace{3pt}
+\noindent\textbf{Languages:} Arabic (Native) \enspace$|$\enspace English (Intermediate)
 
 \end{document}
