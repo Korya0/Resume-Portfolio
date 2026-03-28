@@ -39,7 +39,7 @@
 <a href="https://github.com/Korya0">
   <img src="https://img.shields.io/badge/💻_GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
 </a>
-<a href="https://drive.google.com/file/d/1Wpl_YewRVVTflzWfG80OCBxLI1_Nqukm/view?usp=sharing">
+<a href="https://drive.google.com/file/d/1wR8P6diaqCQUxqPIgYlCgLonV9bnafG_/view?usp=sharing">
   <img src="https://img.shields.io/badge/📥_Download_CV-00C853?style=for-the-badge" alt="Download CV"/>
 </a>
 <a href="https://www.overleaf.com/project">
