@@ -141,15 +141,6 @@ Distributed under the **MIT License**. See `LICENSE` for more information.
 
 ---
 
-## 📞 Contact
-
-<hr style="height:1px;border:none;color:#333;background-color:#333;" />
-
-- **Mahmoud Mohamed** - [LinkedIn Profile](https://www.linkedin.com/in/mahmoud-mohamed-5938ab28a/)
-- **Project Link**: [https://github.com/Korya0/Resume-Portfolio](https://github.com/Korya0/Resume-Portfolio)
-
----
-
 ## 💖 Acknowledgments
 
 <hr style="height:1px;border:none;color:#333;background-color:#333;" />
