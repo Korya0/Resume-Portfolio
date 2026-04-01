@@ -166,20 +166,20 @@ dev_dependencies:
 ## 📋 Implementation Tasks (Ordered)
 
 ### Phase 1: Core Setup & DI structure
-- [ ] **T1.1** — Setup `core/theme/` utilizing the scalable `theme_extension` approach for colors/text mapping CSS variables.
-- [ ] **T1.2** — Setup `core/router/` utilizing `GoRouter` with `ShellRoute` setup for tabbed navigation matching the 6 sections.
-- [ ] **T1.3** — Implement `core/storage/local_storage_service.dart` wrapper implementation for persistence.
-- [ ] **T1.4** — Create `core/constants/mastery_data.dart` holding static JSON representation of mastery rules.
-- [ ] **T1.5** — Create `core/di/injection.dart` and `di_helper.dart`.
-- [ ] **T1.6** — Initialize base `app.dart` to instantiate Material App and Router.
+- [x] **T1.1** — Setup `core/theme/` utilizing the scalable `theme_extension` approach for colors/text mapping CSS variables.
+- [x] **T1.2** — Setup `core/router/` utilizing `GoRouter` with `ShellRoute` setup for tabbed navigation matching the 6 sections.
+- [x] **T1.3** — Implement `core/storage/local_storage_service.dart` wrapper implementation for persistence.
+- [x] **T1.4** — Create `core/constants/mastery_data.dart` holding static JSON representation of mastery rules.
+- [x] **T1.5** — Create `core/di/injection.dart` and `di_helper.dart`.
+- [x] **T1.6** — Initialize base `app.dart` to instantiate Material App and Router.
 
 ### Phase 2: Domain Entities
-- [ ] **T2.1** — Create entities: `sidebar_link.dart`, `roadmap_section.dart`, `roadmap_item.dart`, `mastery_info.dart`, `book.dart`, `tip.dart`, `problem.dart`, `note.dart`, `cv_analysis_result.dart`.
+- [x] **T2.1** — Create entities: `sidebar_link.dart`, `roadmap_section.dart`, `roadmap_item.dart`, `mastery_info.dart`, `book.dart`, `tip.dart`, `problem.dart`, `note.dart`, `cv_analysis_result.dart`.
 
 ### Phase 3: Data Layer (Repositories)
-- [ ] **T3.1** — Implement `sidebar_repository.dart` to read/write external app links.
-- [ ] **T3.2** — Implement `roadmap_repository.dart` for section configurations and completion tracking.
-- [ ] **T3.3** — Implement `books_repository.dart`, `tips_repository.dart`, `problems_repository.dart`, `notes_repository.dart` for standard CRUD with SharedPreferences.
+- [x] **T3.1** — Implement `sidebar_repository.dart` to read/write external app links.
+- [x] **T3.2** — Implement `roadmap_repository.dart` for section configurations and completion tracking.
+- [x] **T3.3** — Implement `books_repository.dart`, `tips_repository.dart`, `problems_repository.dart`, `notes_repository.dart` for standard CRUD with SharedPreferences.
 
 ### Phase 4: Shared & Form Widgets
 - [ ] **T4.1** — Build `app_modal.dart` overlay logic matching web behavior.
