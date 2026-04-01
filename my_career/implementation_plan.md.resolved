@@ -1,0 +1,256 @@
+# MY CAREER — HTML to Flutter Conversion Plan
+
+Convert the "MY CAREER" Flutter Roadmap Tracker website (HTML/CSS/JS) into a **pixel-perfect Flutter app** (Web + Mobile) following the AI Constitution rules: Clean Architecture, BLoC/Cubit, GetIt DI, Sealed Classes, Material 3 theme extensible architecture, `const` constructors, and dartdoc.
+
+> [!IMPORTANT]
+> **Single language (English), Theme Extensible (Currently Dark only)** — matching the website's `#08090f` dark palette exactly, but built symmetrically to allow light themes in the future.
+
+---
+
+## 📊 Website Feature Inventory
+
+The source website has **6 pages** and **8 modals**, all using persistence:
+
+| Page | Purpose | Key Features |
+|------|---------|-------------|
+| 🗺️ **Roadmap** | Flutter learning checklist | 16 sections, ~80+ topics, progress bar, collapsible sections, mastery modal (WHY/HOW/DEEP/TEACH), tags (ADV/NEW/LEAD/ALT) |
+| 📚 **Books** | Reading list | CRUD cards with icon, title, author, note, PDF link |
+| 💡 **Stand Out** | Career tips | CRUD cards with icon, category, title, body |
+| 🔧 **Problems** | Problem log | CRUD accordion with title, tag, difficulty (easy/medium/hard), description, solution, date |
+| 📝 **Notes** | Knowledge base | CRUD cards with title, content, source link, date, search/filter |
+| 📊 **CV Compare** | CV vs roadmap analysis | Textarea input, keyword matching, gap analysis report |
+
+---
+
+## 🏗️ Proposed Architecture
+
+```text
+lib/
+├── main.dart
+├── app.dart                           // MyCareerApp widget
+├── core/
+│   ├── constants/
+│   │   ├── app_constants.dart         // Storage keys, default data keys
+│   │   └── mastery_data.dart          // Static mastery WHY/HOW/DEEP/TEACH data
+│   ├── theme/
+│   │   ├── app_theme.dart             // Supports multiple themes (Light/Dark extensions)
+│   │   ├── colors/                    // AppColors, AppColorsExtension
+│   │   ├── typography/                // AppFonts, TextStyles, TextThemeExtension
+│   │   └── widgets/                   // AppComponentsTheme
+│   ├── di/
+│   │   ├── injection.dart             // GetIt setup
+│   │   └── di_helper.dart             // Reusable DI Helper
+│   ├── router/
+│   │   ├── app_router.dart            // GoRouter with ShellRoute for tab-based navigation
+│   │   └── app_routes.dart            // Route constants
+│   ├── storage/
+│   │   ├── local_storage_service.dart  // SharedPreferences wrapper (interface + impl)
+│   │   └── storage_keys.dart          // All localStorage key constants
+│   └── common_widgets/                // Shared reusable widgets (buttons, dialogs, etc.)
+│       ├── app_modal.dart             // Base modal overlay
+│       ├── app_card.dart              // Base card with hover effect
+│       ├── app_progress_bar.dart      // Gradient progress bar
+│       ├── app_tag.dart               // ADV/NEW/LEAD/ALT tag pill
+│       └── app_legend_pill.dart       // WHY/HOW/DEEP/TEACH legend
+├── features/
+│   ├── shell/                         // Main scaffold with sidebar + tabs
+│   │   └── presentation/
+│   │       └── widgets/
+│   │           ├── app_shell.dart          // GoRouter Shell Scaffolding
+│   │           ├── sidebar.dart            // Fixed left sidebar
+│   │           ├── sidebar_link_item.dart  // Single sidebar icon link
+│   │           └── top_nav_bar.dart        // Sticky tab bar for GoRouter navigation
+│   ├── roadmap/
+│   │   ├── presentation/
+│   │   │   ├── cubit/
+│   │   │   │   ├── roadmap_cubit.dart
+│   │   │   │   └── roadmap_state.dart      // Sealed: Loading/Loaded/Error
+│   │   │   ├── pages/
+│   │   │   │   └── roadmap_page.dart
+│   │   │   └── widgets/
+│   │   │       ├── mastery_modal.dart      // 4-step flow + checklist + AI tip
+│   │   │       ├── section_card.dart       // Collapsible section
+│   │   │       ├── progress_header.dart
+│   │   │       ├── legend_bar.dart 
+│   │   │       ├── section_form_modal.dart 
+│   │   │       └── item_form_modal.dart 
+│   │   ├── domain/
+│   │   │   └── entities/
+│   │   │       └── roadmap_section.dart    
+│   │   └── data/
+│   │       └── repositories/
+│   │           └── roadmap_repository.dart 
+│   ├── books/
+│   │   ├── presentation/
+│   │   │   ├── cubit/
+│   │   │   ├── pages/
+│   │   │   └── widgets/
+│   │   ├── domain/
+│   │   └── data/
+│   ├── tips/
+│   │   ├── presentation/
+│   │   │   ├── cubit/
+│   │   │   ├── pages/
+│   │   │   └── widgets/
+│   │   ├── domain/
+│   │   └── data/
+│   ├── problems/
+│   │   ├── presentation/
+│   │   │   ├── cubit/
+│   │   │   ├── pages/
+│   │   │   └── widgets/
+│   │   ├── domain/
+│   │   └── data/
+│   ├── notes/
+│   │   ├── presentation/
+│   │   │   ├── cubit/
+│   │   │   ├── pages/
+│   │   │   └── widgets/
+│   │   ├── domain/
+│   │   └── data/
+│   ├── cv_compare/
+│   │   ├── presentation/
+│   │   │   ├── cubit/
+│   │   │   ├── pages/
+│   │   │   └── widgets/
+│   │   ├── domain/
+│   │   └── data/
+│   └── settings/
+│       └── presentation/
+│           ├── cubit/
+│           └── widgets/
+```
+
+---
+
+## 🎨 Design System & Core Re-use
+
+The app integrates a scalable core architecture (based on the `re-use` folder structure). This entails:
+1. **Theming Extensions**: Leveraging `ThemeExtension` to easily inject colors and typography ensuring straightforward multi-theme setup down the line.
+2. **Flexible Typography**: Utilizing centralized font families to make design tweaks seamless.
+3. **Structured DI**: All external services, use-cases, and cubits registered coherently via `DIHelper`.
+
+---
+
+## 📦 Dependencies Required
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^9.0.0
+  get_it: ^8.0.0
+  go_router: ^17.1.0        # Nested ShellRouting for tabs
+  shared_preferences: ^2.5.5
+  json_annotation: ^4.9.0
+  url_launcher: ^6.3.0
+  google_fonts: ^6.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  json_serializable: ^6.9.0
+  build_runner: ^2.4.0
+```
+
+---
+
+## 🖼️ Assets Required
+
+> [!NOTE]
+> We will **not use any internal assets/images**. We will rely entirely on **emojis and first-character initials** for icons/topics (e.g., 📁📋🐙 or 'M' for Mobile). This keeps the app incredibly lightweight without losing visual distinctiveness. System font icons will be used where emojis don't suffice.
+
+---
+
+## 📋 Implementation Tasks (Ordered)
+
+### Phase 1: Core Setup & DI structure
+- [ ] **T1.1** — Setup `core/theme/` utilizing the scalable `theme_extension` approach for colors/text mapping CSS variables.
+- [ ] **T1.2** — Setup `core/router/` utilizing `GoRouter` with `ShellRoute` setup for tabbed navigation matching the 6 sections.
+- [ ] **T1.3** — Implement `core/storage/local_storage_service.dart` wrapper implementation for persistence.
+- [ ] **T1.4** — Create `core/constants/mastery_data.dart` holding static JSON representation of mastery rules.
+- [ ] **T1.5** — Create `core/di/injection.dart` and `di_helper.dart`.
+- [ ] **T1.6** — Initialize base `app.dart` to instantiate Material App and Router.
+
+### Phase 2: Domain Entities
+- [ ] **T2.1** — Create entities: `sidebar_link.dart`, `roadmap_section.dart`, `roadmap_item.dart`, `mastery_info.dart`, `book.dart`, `tip.dart`, `problem.dart`, `note.dart`, `cv_analysis_result.dart`.
+
+### Phase 3: Data Layer (Repositories)
+- [ ] **T3.1** — Implement `sidebar_repository.dart` to read/write external app links.
+- [ ] **T3.2** — Implement `roadmap_repository.dart` for section configurations and completion tracking.
+- [ ] **T3.3** — Implement `books_repository.dart`, `tips_repository.dart`, `problems_repository.dart`, `notes_repository.dart` for standard CRUD with SharedPreferences.
+
+### Phase 4: Shared & Form Widgets
+- [ ] **T4.1** — Build `app_modal.dart` overlay logic matching web behavior.
+- [ ] **T4.2** — Build `app_card.dart` supporting CSS-like hover effects.
+- [ ] **T4.3** — Build `app_progress_bar.dart` mapped to gradient progress bar visuals.
+- [ ] **T4.4** — Build `app_tag.dart` and `app_legend_pill.dart` colored identifiers.
+- [ ] **T4.5** — Build `app_form_field.dart`, `app_danger_button.dart`.
+
+### Phase 5: Navigation Shell (ShellRoute Support)
+- [ ] **T5.1** — Build `app_shell.dart` containing `sidebar.dart` and `top_nav_bar.dart` mapped around a `ShellRoute` inner navigation area.
+- [ ] **T5.2** — Develop the Sidebar manager logic allowing dynamic URL emoji links editing.
+
+### Phase 6: Roadmap Feature
+- [ ] **T6.1** — Setup `roadmap_cubit.dart` managing progression states.
+- [ ] **T6.2** — Build `roadmap_page.dart` wiring up grid maps.
+- [ ] **T6.3** — Build `section_card.dart` and recursive checkboxes UI (`topic_item.dart`).
+- [ ] **T6.4** — Construct the `mastery_modal.dart` implementing the deep dive checklist workflow logic.
+- [ ] **T6.5** — Finalize topic and section manager modals for CRUD operations on roadmap data.
+
+### Phase 7: Books Feature
+- [ ] **T7.1** — Setup `books_cubit.dart`.
+- [ ] **T7.2** — Build `books_page.dart` UI grids.
+- [ ] **T7.3** — Implement Add/Edit `book_form_modal.dart`.
+
+### Phase 8: Tips Feature
+- [ ] **T8.1** — Setup `tips_cubit.dart`.
+- [ ] **T8.2** — Build `tips_page.dart`.
+- [ ] **T8.3** — Implement `tip_card.dart` and `tip_form_modal.dart`.
+
+### Phase 9: Problems Feature
+- [ ] **T9.1** — Setup `problems_cubit.dart`.
+- [ ] **T9.2** — Build `problems_page.dart` allowing collapsible problem descriptions.
+- [ ] **T9.3** — Implement `problem_card.dart` dynamically styling border by difficulty.
+- [ ] **T9.4** — Implement Add `problem_form_modal.dart`.
+
+### Phase 10: Notes Feature
+- [ ] **T10.1** — Setup `notes_cubit.dart`.
+- [ ] **T10.2** — Build `notes_page.dart` implementing real-time list filtering from text input.
+- [ ] **T10.3** — Implement Add `note_form_modal.dart`.
+
+### Phase 11: CV Compare Feature
+- [ ] **T11.1** — Setup `cv_compare_cubit.dart`.
+- [ ] **T11.2** — Build `cv_compare_page.dart` split 2-panel architecture.
+- [ ] **T11.3** — Implement simple string matching algorithm connecting checked topic models against provided Resume textarea input.
+- [ ] **T11.4** — Visual display mapping outputs onto `cv_result_card.dart`.
+
+### Phase 12: Settings Feature
+- [ ] **T12.1** — Setup `settings_cubit.dart`.
+- [ ] **T12.2** — Implement `settings_modal.dart` managing persistent storage wipe methods per section type.
+
+### Phase 13: GoRouter Wiring & DI Integrations
+- [ ] **T13.1** — Verify all repositories and cubits are fully initialized inside `injection.dart` using `di_helper.dart`.
+- [ ] **T13.2** — Integrate routing hooks attaching cubit providers to paths within `app_router.dart`.
+- [ ] **T13.3** — Complete data hydration checking initial cache load on app start.
+
+### Phase 14: Verification
+- [ ] **T14.1** — Test GoRouter deep linking and tab switching.
+- [ ] **T14.2** — Verify responsive layout scaling seamlessly eliminating fixed boundaries limits locally.
+- [ ] **T14.3** — Comprehensive test execution running `flutter analyze` guaranteeing zero-warn builds.
+
+---
+
+## Verification Plan
+
+### Automated
+```bash
+flutter analyze          # Zero warnings/errors
+flutter build web        # Successful web build
+```
+
+### Manual
+- Navigate through tabs, ensuring GoRouter URL changes appropriately dynamically highlighting sidebar tab variants.
+- Open multiple modals securely triggering persistence to `shared_preferences`.
+- Validate scaling limits utilizing Web Chrome Inspector tracking visual integrity down to typical Mobile sizes.
