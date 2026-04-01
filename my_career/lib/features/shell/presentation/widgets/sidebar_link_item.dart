@@ -24,7 +24,7 @@ class SidebarLinkItem extends StatelessWidget {
       child: GestureDetector(
         onTap: () => context.go(path),
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: AppConstants.defaultAnimationDurationMs),
+          duration: const Duration(milliseconds: AnimationConstants.defaultAnimationDurationMs),
           margin: const EdgeInsets.symmetric(vertical: 4, horizontal: 12),
           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
           decoration: BoxDecoration(
@@ -45,7 +45,7 @@ class SidebarLinkItem extends StatelessWidget {
               Expanded(
                 child: Text(
                   title,
-                  style: context.typography.bodyRegular.copyWith(
+                  style: context.typography.font14W400Color.copyWith(
                     color: isSelected ? context.colors.accent : context.colors.text,
                     fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
                   ),

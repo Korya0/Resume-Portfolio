@@ -126,9 +126,10 @@ lib/
 ## 🎨 Design System & Core Re-use
 
 The app integrates a scalable core architecture (based on the `re-use` folder structure). This entails:
-1. **Theming Extensions**: Leveraging `ThemeExtension` to easily inject colors and typography ensuring straightforward multi-theme setup down the line.
-2. **Flexible Typography**: Utilizing centralized font families to make design tweaks seamless.
-3. **Structured DI**: All external services, use-cases, and cubits registered coherently via `DIHelper`.
+1. **Theming Extensions**: Leveraging `ThemeExtension` to easily inject colors and typography. Use explicit naming like `context.typography.font16W700Color`.
+2. **Strict File Limits**: No file should exceed 80 lines. Components must be split into sub-widgets (e.g., `section_header.dart`).
+3. **Flexible Constants**: Always reuse `LayoutConstants`, `AnimationConstants`, and `AppStrings`.
+4. **Haptic Feedback**: Always use `HapticFeedbackHelper` for interactive elements.
 
 ---
 
@@ -192,16 +193,16 @@ dev_dependencies:
 - [x] **T5.2** — Develop the Sidebar manager logic allowing dynamic URL emoji links editing.
 
 ### Phase 6: Roadmap Feature
-- [ ] **T6.1** — Setup `roadmap_cubit.dart` managing progression states.
-- [ ] **T6.2** — Build `roadmap_page.dart` wiring up grid maps.
-- [ ] **T6.3** — Build `section_card.dart` and recursive checkboxes UI (`topic_item.dart`).
+- [x] **T6.1** — Setup `roadmap_cubit.dart` managing progression states.
+- [x] **T6.2** — Build `roadmap_page.dart` wiring up grid maps.
+- [x] **T6.3** — Build `section_card.dart` and recursive checkboxes UI (`topic_item.dart`).
 - [ ] **T6.4** — Construct the `mastery_modal.dart` implementing the deep dive checklist workflow logic.
 - [ ] **T6.5** — Finalize topic and section manager modals for CRUD operations on roadmap data.
 
 ### Phase 7: Books Feature
-- [ ] **T7.1** — Setup `books_cubit.dart`.
-- [ ] **T7.2** — Build `books_page.dart` UI grids.
-- [ ] **T7.3** — Implement Add/Edit `book_form_modal.dart`.
+- [x] **T7.1** — Setup `books_cubit.dart`.
+- [x] **T7.2** — Build `books_page.dart` UI grids.
+- [x] **T7.3** — Implement Add/Edit `book_form_modal.dart`.
 
 ### Phase 8: Tips Feature
 - [ ] **T8.1** — Setup `tips_cubit.dart`.

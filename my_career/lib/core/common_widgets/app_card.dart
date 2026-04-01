@@ -29,7 +29,7 @@ class _AppCardState extends State<AppCard> {
       child: GestureDetector(
         onTap: widget.onTap,
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: AppConstants.defaultAnimationDurationMs),
+          duration: const Duration(milliseconds: AnimationConstants.defaultAnimationDurationMs),
           padding: widget.padding,
           decoration: BoxDecoration(
             color: _isHovered && widget.onTap != null

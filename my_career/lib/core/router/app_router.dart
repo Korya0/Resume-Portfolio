@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'app_routes.dart';
 import '../../features/shell/presentation/widgets/app_shell.dart';
+import '../../features/roadmap/presentation/pages/roadmap_page.dart';
+import '../../features/books/presentation/pages/books_page.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> _shellNavigatorKey = GlobalKey<NavigatorState>();
@@ -21,31 +23,31 @@ final appRouter = GoRouter(
       routes: [
         GoRoute(
           path: AppRoutes.roadmap,
-          builder: (context, state) => const Center(child: Text('Roadmap Page')),
+          builder: (context, state) => const RoadmapPage(),
         ),
         GoRoute(
           path: AppRoutes.books,
-          builder: (context, state) => const Center(child: Text('Books Page')),
+          builder: (context, state) => const BooksPage(),
         ),
         GoRoute(
           path: AppRoutes.tips,
-          builder: (context, state) => const Center(child: Text('Tips Page')),
+          builder: (context, state) => const Scaffold(body: Center(child: Text("Tips Page"))),
         ),
         GoRoute(
           path: AppRoutes.problems,
-          builder: (context, state) => const Center(child: Text('Problems Page')),
+          builder: (context, state) => const Scaffold(body: Center(child: Text("Problems Page"))),
         ),
         GoRoute(
           path: AppRoutes.notes,
-          builder: (context, state) => const Center(child: Text('Notes Page')),
+          builder: (context, state) => const Scaffold(body: Center(child: Text("Notes Page"))),
         ),
         GoRoute(
           path: AppRoutes.cvCompare,
-          builder: (context, state) => const Center(child: Text('CV Compare Page')),
+          builder: (context, state) => const Scaffold(body: Center(child: Text("CV Analysis Page"))),
         ),
         GoRoute(
           path: AppRoutes.settings,
-          builder: (context, state) => const Center(child: Text('Settings Page')),
+          builder: (context, state) => const Scaffold(body: Center(child: Text("Settings Page"))),
         ),
       ],
     ),

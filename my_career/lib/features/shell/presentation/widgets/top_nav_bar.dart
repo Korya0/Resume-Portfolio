@@ -10,7 +10,7 @@ class TopNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: AppConstants.topNavBarHeight,
+      height: LayoutConstants.topNavBarHeight,
       padding: const EdgeInsets.symmetric(horizontal: 24),
       decoration: BoxDecoration(
         color: context.colors.background.withValues(alpha: 0.8),
@@ -20,9 +20,8 @@ class TopNavBar extends StatelessWidget {
         children: [
           Text(
             title,
-            style: context.typography.titleMedium.copyWith(
+            style: context.typography.font16W700Color.copyWith(
               fontSize: 22,
-              fontWeight: FontWeight.bold,
             ),
           ),
           const Spacer(),
@@ -39,10 +38,9 @@ class TopNavBar extends StatelessWidget {
                 Icon(Icons.search, size: 18, color: context.colors.muted),
                 const SizedBox(width: 8),
                 Text(
-                  AppConstants.searchPlaceholder,
-                  style: context.typography.bodyRegular.copyWith(
+                  AppStrings.searchPlaceholder,
+                  style: context.typography.font14W400Color.copyWith(
                     color: context.colors.muted,
-                    fontSize: 14,
                   ),
                 ),
               ],

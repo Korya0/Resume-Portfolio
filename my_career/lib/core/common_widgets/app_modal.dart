@@ -39,8 +39,8 @@ class AppModal extends StatelessWidget {
         side: BorderSide(color: context.colors.border2, width: 1),
       ),
       child: Container(
-        width: AppConstants.modalMaxWidth,
-        padding: const EdgeInsets.all(24),
+        width: LayoutConstants.modalMaxWidth,
+        padding: const EdgeInsets.all(LayoutConstants.defaultPadding),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +51,7 @@ class AppModal extends StatelessWidget {
                 Expanded(
                   child: Text(
                     title,
-                    style: context.typography.titleMedium,
+                    style: context.typography.font16W700Color,
                   ),
                 ),
                 IconButton(

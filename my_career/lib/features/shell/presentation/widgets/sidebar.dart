@@ -20,7 +20,7 @@ class Sidebar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: AppConstants.sidebarWidth,
+      width: LayoutConstants.sidebarWidth,
       decoration: BoxDecoration(
         color: context.colors.surface,
         border: Border(right: BorderSide(color: context.colors.border, width: 1)),
@@ -41,11 +41,9 @@ class Sidebar extends StatelessWidget {
                   child: const Text("🚀", style: TextStyle(fontSize: 24)),
                 ),
                 const SizedBox(width: 12),
-                const Text(
-                  AppConstants.appTitle,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
+                Text(
+                  AppStrings.appTitle,
+                  style: context.typography.font16W700Color.copyWith(
                     letterSpacing: 1.2,
                   ),
                 ),

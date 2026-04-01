@@ -24,7 +24,7 @@ class AppProgressBar extends StatelessWidget {
           return Stack(
             children: [
               AnimatedContainer(
-                duration: const Duration(milliseconds: AppConstants.progressAnimationDurationMs),
+                duration: const Duration(milliseconds: AnimationConstants.progressAnimationDurationMs),
                 width: constraints.maxWidth * progress.clamp(0.0, 1.0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(4),
