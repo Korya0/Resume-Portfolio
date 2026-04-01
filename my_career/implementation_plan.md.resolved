@@ -138,14 +138,13 @@ The app integrates a scalable core architecture (based on the `re-use` folder st
 dependencies:
   flutter:
     sdk: flutter
-  flutter_bloc: ^9.0.0
-  get_it: ^8.0.0
+  flutter_bloc: ^9.1.1
+  get_it: ^9.2.1
   go_router: ^17.1.0        # Nested ShellRouting for tabs
   shared_preferences: ^2.5.5
-  json_annotation: ^4.9.0
-  url_launcher: ^6.3.0
-  google_fonts: ^6.2.0
-
+  json_annotation: ^4.11.0
+  url_launcher: ^6.3.2
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -182,15 +181,15 @@ dev_dependencies:
 - [x] **T3.3** — Implement `books_repository.dart`, `tips_repository.dart`, `problems_repository.dart`, `notes_repository.dart` for standard CRUD with SharedPreferences.
 
 ### Phase 4: Shared & Form Widgets
-- [ ] **T4.1** — Build `app_modal.dart` overlay logic matching web behavior.
-- [ ] **T4.2** — Build `app_card.dart` supporting CSS-like hover effects.
-- [ ] **T4.3** — Build `app_progress_bar.dart` mapped to gradient progress bar visuals.
-- [ ] **T4.4** — Build `app_tag.dart` and `app_legend_pill.dart` colored identifiers.
-- [ ] **T4.5** — Build `app_form_field.dart`, `app_danger_button.dart`.
+- [x] **T4.1** — Build `app_modal.dart` overlay logic matching web behavior.
+- [x] **T4.2** — Build `app_card.dart` supporting CSS-like hover effects.
+- [x] **T4.3** — Build `app_progress_bar.dart` mapped to gradient progress bar visuals.
+- [x] **T4.4** — Build `app_tag.dart` and `app_legend_pill.dart` colored identifiers.
+- [x] **T4.5** — Build `app_form_field.dart`, `app_danger_button.dart`.
 
 ### Phase 5: Navigation Shell (ShellRoute Support)
-- [ ] **T5.1** — Build `app_shell.dart` containing `sidebar.dart` and `top_nav_bar.dart` mapped around a `ShellRoute` inner navigation area.
-- [ ] **T5.2** — Develop the Sidebar manager logic allowing dynamic URL emoji links editing.
+- [x] **T5.1** — Build `app_shell.dart` containing `sidebar.dart` and `top_nav_bar.dart` mapped around a `ShellRoute` inner navigation area.
+- [x] **T5.2** — Develop the Sidebar manager logic allowing dynamic URL emoji links editing.
 
 ### Phase 6: Roadmap Feature
 - [ ] **T6.1** — Setup `roadmap_cubit.dart` managing progression states.

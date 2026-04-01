@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'app_routes.dart';
+import '../../features/shell/presentation/widgets/app_shell.dart';
 
 final GlobalKey<NavigatorState> _rootNavigatorKey = GlobalKey<NavigatorState>();
 final GlobalKey<NavigatorState> _shellNavigatorKey = GlobalKey<NavigatorState>();
@@ -12,16 +13,9 @@ final appRouter = GoRouter(
     ShellRoute(
       navigatorKey: _shellNavigatorKey,
       builder: (context, state, child) {
-        // Dummy shell until Phase 5
-        return Scaffold(
-          appBar: AppBar(title: const Text('Dummy Shell')),
-          body: child,
-          bottomNavigationBar: BottomNavigationBar(
-            items: const [
-              BottomNavigationBarItem(icon: Icon(Icons.map), label: 'Roadmap'),
-              BottomNavigationBarItem(icon: Icon(Icons.book), label: 'Books'),
-            ],
-          ),
+        return AppShell(
+          currentPath: state.matchedLocation,
+          child: child,
         );
       },
       routes: [
