@@ -30,14 +30,17 @@
 
 <!-- Links Section -->
 <p>
-<a href="https://www.linkedin.com/in/mahmoud-mohamed-5938ab28a/">
+<a href="https://www.linkedin.com/in/mahmoudk25/">
   <img src="https://img.shields.io/badge/💬_LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
 </a>
-<a href="https://aboard-drop-6d7.notion.site/Flutter-Developer-2427990c6fad808d8c72f2ebaabb3604?pvs=74">
+<a href="https://aboard-drop-6d7.notion.site/Flutter-Developer-2427990c6fad808d8c72f2ebaabb3604">
   <img src="https://img.shields.io/badge/🌐_Portfolio-D4AF37?style=for-the-badge" alt="Portfolio"/>
 </a>
 <a href="https://github.com/Korya0">
   <img src="https://img.shields.io/badge/💻_GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+</a>
+<a href="https://wa.me/201065171195">
+  <img src="https://img.shields.io/badge/💬_WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp"/>
 </a>
 <a href="https://drive.google.com/file/d/1wR8P6diaqCQUxqPIgYlCgLonV9bnafG_/view?usp=sharing">
   <img src="https://img.shields.io/badge/📥_Download_CV-00C853?style=for-the-badge" alt="Download CV"/>
@@ -97,7 +100,7 @@
 To customize the CV for your own use:
 1. **Clone the repository**: `git clone https://github.com/Korya0/Resume-Portfolio.git`
 2. **Open the LaTeX file**: Navigate to `cv/mahmoud_mohamed_cv.tex`.
-3. **Customize Personal Info**: Update lines **54-58** with your own name, phone number, email, and social links.
+3. **Customize Personal Info**: Update lines **28-32** with your own name, phone number, email, and social links.
 4. **Compile**: Upload the contents of the `cv/` directory to [Overleaf](https://www.overleaf.com) or use a local compiler like `pdflatex`.
 
 ---
