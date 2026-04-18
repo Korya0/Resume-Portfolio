@@ -42,7 +42,7 @@
 <a href="https://wa.me/201065171195">
   <img src="https://img.shields.io/badge/💬_WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp"/>
 </a>
-<a href="https://drive.google.com/file/d/1wR8P6diaqCQUxqPIgYlCgLonV9bnafG_/view?usp=sharing">
+<a href="https://drive.google.com/file/d/1r-W0WMnYiuT5zsfhlNli7PwiM4unWVY-/view?usp=sharing">
   <img src="https://img.shields.io/badge/📥_Download_CV-00C853?style=for-the-badge" alt="Download CV"/>
 </a>
 <a href="https://www.overleaf.com/project">
